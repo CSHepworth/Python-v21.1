@@ -33,5 +33,5 @@ user1 = User("Cooper", "Hepworth", "cooperhepworth@hotmail.com", 25)
 user1.display_info().enroll().spend_points(50).display_info()
 
 #user2
-user2 = User("Isaac", "Clark", "isaacclark@cec.com", 32)
-user2.enroll().spend_points(80).display_info()
+#user2 = User("Isaac", "Clark", "isaacclark@cec.com", 32)
+#user2.enroll().spend_points(80).display_info()

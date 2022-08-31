@@ -47,6 +47,6 @@ class User:
         return self
 
 
-user1 = User("Todd", "Nickerson")
+user1 = User("Weyland", "Yutani")
 user1.display_user_account_info().make_deposit(50).display_user_account_info().yield_user_interest().display_user_account_info().make_withdrawal(25).display_user_account_info()
 
