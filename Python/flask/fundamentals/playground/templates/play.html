@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Playground - Play</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            body {
+                background-color: #ffffff;
+            }
+            .heading {
+                text-align: center;
+                margin: 20px;
+            }
+            .mainDiv {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin: 20px auto;
+                width: 90%;
+            }
+            .box1 {
+                display: flex;
+                width: 200px;
+                height: 200px;
+                background-color: #27a1f2;
+                border: solid 2px #101010;
+                border-radius: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="heading">Welcome!</h1>
+        <div class="mainDiv">
+            {% for x in range(0, times): %}
+                <div class="box1" style="background-color:{{color}}"></div>
+            {% endfor %}
+
+        </div>
+    </body>
+</html>
