@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="header">
+        <div class="innerHeader">
+            <div class="logo">
+                <a href="/" class="logoLink"><h1>FLASK</h1></a>
+            </div>
+            <div class="headerLinkDiv">
+                <a class="headerLink" href="/register">Link1</a>
+                <a class="headerLink" href="">Link2</a>
+                <a class="headerLink" href="">Link3</a>
+
+            </div>
+        </div>
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>
