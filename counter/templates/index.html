@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Counter</title>
+{% endblock %}
+
+{% block body %}
+<h1 class="heading1">Counter</h1>
+<h2 class="heading1"><span id="count" name="count">{{ session['counter'] }}</span> Times</h2>
+<div class="buttonDiv">
+    <button name="clickButton" id="clickButton">Click</button>
+    <button name="resetButton" id="resetButton">Reset</button>
+</div>
+{% endblock %}
