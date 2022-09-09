@@ -36,3 +36,19 @@ VALUES
     (4, 5);
 
 
+SELECT first_name, last_name FROM users
+JOIN favorites ON users.id = favorites.users_id
+WHERE favorites.books_id = 3;
+
+DELETE FROM favorites WHERE users_id = 2 AND books_id = 3;
+
+INSERT INTO books.favorites (users_id, books_id)
+VALUES (5, 2);
+
+SELECT title FROM books.books
+JOIN books.favorites on favorites.users_id = users.id
+WHERE favorites.users_id = 3;
+
+SELECT first_name, last_name FROM books.users
+JOIN books.favorites ON favorites.users_id = users.id
+WHERE favorites.books_id = 5;
