@@ -6,9 +6,9 @@
 
 {% block body %}
 <div class="inputDiv">
-    <h2 class="resultHeader">{{ session['input_name'] }}</h2>
-    <p class="resultItem">Location:{{ session['location'] }}</p>
-    <p class="resultItem">Favorite Language: {{ session['favlang'] }}</p>
-    <p class="resultItem">Comments: {{ session['comments'] }}</p>
+    <h2 class="resultHeader">{{ survey.name }}</h2>
+    <p class="resultItem">Location: {{ survey.location }}</p>
+    <p class="resultItem">Favorite Language: {{ survey.language }}</p>
+    <p class="resultItem">Comments: {{ survey.comments }}</p>
 </div>
 {% endblock %}

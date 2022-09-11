@@ -6,14 +6,21 @@
 
 {% block body %}
 <div class="inputDiv">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <h2 class="inputHeader">Dojo Survey</h2>
-    <form action="/" method="post" class="formDiv">
-        <label for="input_name">Name:</label>
-        <input type="text" id="input_name" name="input_name" class="txtInput">
-        <label for="name">Location:</label>
+    <form action="/save" method="post" class="formDiv">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="txtInput">
+        <label for="location">Location:</label>
         <input type="text" id="location" name="location" class="txtInput">
-        <label for="favLang">Select a Favorite Language</label>
-        <select name="favLang" id="favLang" class="slctInput">
+        <label for="language">Select a Favorite Language</label>
+        <select name="language" id="language" class="slctInput">
             <option value=""></option>
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>

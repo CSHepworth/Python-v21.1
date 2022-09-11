@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, session
+from survey import Survey
 
 app = Flask(__name__)
 app.secret_key = "And WE'RE BACK!!"
@@ -7,22 +8,16 @@ app.secret_key = "And WE'RE BACK!!"
 def index():
     return render_template('index.html')
 
-@app.route('/', methods=['POST'])
+@app.route('/save', methods=['POST'])
 def sendResults():
-    print(request.form)
-    input_name = request.form['input_name']
-    location = request.form['location']
-    favLang = request.form['favLang']
-    comments = request.form['comments']
-    session['input_name'] = input_name
-    session['location'] = location
-    session['favLang'] = favLang
-    session['comments'] = comments
-    return redirect('/results')
+    if Survey.validate_survey(request.form):
+        Survey.save(request.form)
+        return redirect('/results')
+    return redirect('/')
 
 @app.route('/results')
 def showResults():
-    return render_template('results.html', input_name_on_template = session['input_name'], location = session['location'], favlang = session['favLang'], comments = session['comments'])
+    return render_template('results.html', survey = Survey.get_recent())
 
 if __name__ == "__main__":
     app.run(debug=True)
