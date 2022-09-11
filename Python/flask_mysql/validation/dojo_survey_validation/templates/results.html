@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Dojo Survey Results</title>
+{% endblock %}
+
+{% block body %}
+<div class="inputDiv">
+    <h2 class="resultHeader">{{ session['input_name'] }}</h2>
+    <p class="resultItem">Location:{{ session['location'] }}</p>
+    <p class="resultItem">Favorite Language: {{ session['favlang'] }}</p>
+    <p class="resultItem">Comments: {{ session['comments'] }}</p>
+</div>
+{% endblock %}

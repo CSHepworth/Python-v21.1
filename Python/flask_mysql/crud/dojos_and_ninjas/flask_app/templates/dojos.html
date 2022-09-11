@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Dojos</title>
+{% endblock %}
+
+{% block body %}
+<div class="mainDiv">
+    <div class="newDojoDiv">
+        <h2 class="newDojoHeader">Add New Dojo</h2>
+        <form action="/new_dojo" method="post" class="newDojoForm">
+            <label for="name">Name:</label>
+            <input type="text" name="name" class="addDojoInput">
+            <input type="submit" value="Add Dojo" class="addDojoButton">
+        </form>
+        <a href="/addninja" class="addNewNinja">Add New Ninja</a>
+    </div>
+    <div class="allDojosDiv">
+        <h2>All Dojos</h2>
+        {% for dojo in dojos %}
+            <a href="/dojo/show/{{ dojo.id }}" class="dojoLinks">{{ dojo.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
