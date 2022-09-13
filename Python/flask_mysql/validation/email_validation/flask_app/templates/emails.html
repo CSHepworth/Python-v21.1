@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Emails</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="emailMainDiv">
+    {% for email in emails %}
+    <div class="emailRowDiv">
+        <p>{{ email.email }} | <a href="/email/destory/{{ email.id }}">Delete</a></p> 
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

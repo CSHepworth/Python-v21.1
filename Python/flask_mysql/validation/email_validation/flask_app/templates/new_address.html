@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>New Adress</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="newAddressMainDiv">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <h2>WE'LL TEAR YOUR SOUL APART!!!</h2>
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/save_new" method="post" class="newAddressMainForm">
+        <label for="email">Email:</label>
+        <input type="email" name="email" class="newAddressMainFormInput">
+        <input type="submit" class="newAddressMainFormSubmit">
+    </form>
+</div>
+{% endblock %}

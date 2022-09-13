@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: #ffffff;
+}
+.newAddressMainDiv {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 10px auto;
+    padding: 30px;
+    background-color: #88cfff;
+}
+.newAddressMainForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 25px;
+}
+.newAddressMainFormInput {
+    font-size: 25px;
+    padding: 3px 7px;
+}
+.newAddressMainFormSubmit {
+    font-size: 25px;
+    padding: 3px 7px;
+    width: fit-content;
+}
+.emailMainDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px auto;
+    padding: 30px;
+    background-color: #88cfff;
+    font-size: 25px;
+    width: fit-content;
+}
+.emailRowDiv {
+    display: flex;
+}
