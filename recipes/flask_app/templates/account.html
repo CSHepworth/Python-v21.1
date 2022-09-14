@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Account</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="accountHeader">
+    <div>
+        <h1>Welcome {{ account.first_name }} {{ account.last_name }}!</h1><br>
+        <p>All posted recipes:</p>
+    </div>
+    <div class="newRecipeHeaderRight">
+        <a href="/new_recipe/{{account.id}}">+ Create</a>
+        <a href="">Logout</a>
+    </div>
+</div>
+
+
+{% endblock %}

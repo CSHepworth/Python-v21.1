@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: #ffffff;
+}
+.mainDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 30px auto;
+}
+.registrationDiv {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 40%;
+    height: fit-content;
+    background-color: #4a4c4e;
+}
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.registrationFormHeader {
+    color: #27a1f2;
+    font-size: 30px;
+}
+.registrationFormLabel {
+    color: #ffffff;
+    font-size: 20px;
+}
+.registrationFormInput {
+    font-size: 20px;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+}
+.registrationFormSubmit {
+    font-size: 20px;
+    padding: 5px;
+    background-color: goldenrod;
+    width: fit-content;
+    border: solid 2px #101010;
+    border-radius: 4px;
+}
+.loginDiv {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 40%;
+    height: fit-content;
+    background-color: #4a4c4e;
+}
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.loginFormHeader {
+    color: #27ae60;
+    font-size: 30px;
+}
+.loginFormLabel {
+    color: #ffffff;
+    font-size: 20px;
+}
+.loginFormInput {
+    font-size: 20px;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+}
+.loginFormSubmit {
+    font-size: 20px;
+    padding: 5px;
+    background-color: goldenrod;
+    width: fit-content;
+    border: solid 2px #101010;
+    border-radius: 4px;
+}
+.newRecipeHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto 40px;
+}
+.newRecipeHeaderLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.newRecipeHeaderRight {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.newRecipeForm {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 70%;
+}
+.newRecipeFormLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 45%;
+}
+.newRecipeFormTextArea {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+}
+.newRecipeFormInput {
+    width: 70%;
+    font-size: 20px;
+    padding: 2px 5px;
+}
+.newRecipeFormRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 25px;
+    width: 45%;
+}
+.newRecipeFormDateMade {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+.newRecipeFormDateMadeInput {
+    font-size: 20px;
+}
+.newRecipeFormRadioDiv {
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    gap: 15px;
+}
+.newRecipeFormRadioDivButtons {
+    display: flex;
+    justify-content: space-evenly;
+}
+.newRecipeFormSubmitButton {
+    font-size: 25px;
+    padding: 5px;
+}
+.accountHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+}

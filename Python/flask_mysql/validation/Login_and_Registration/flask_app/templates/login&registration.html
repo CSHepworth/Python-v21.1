@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Index</title>
+{% endblock %}
+
+{% block body %}
+<div class="mainDiv">
+    <div class="registrationDiv">
+        <form action="/create_account" method="post" class="registrationForm">
+            <h2 class="registrationFormHeader">Register</h2>
+            <label for="first_name" class="registrationFormLabel">First Name:</label>
+            <input type="text" name="first_name" class="registrationFormInput">
+            <label for="last_name" class="registrationFormLabel">Last Name:</label>
+            <input type="text" name="last_name" class="registrationFormInput">
+            <label for="email" class="registrationFormLabel">Email</label>
+            <input type="email" name="email" class="registrationFormInput">
+            <label for="password" class="registrationFormLabel">Enter Password:</label>
+            <input type="password" name="password" class="registrationFormInput">
+            <label for="confirm" class="registrationFormLabel">Confirm Password:</label>
+            <input type="password" name="confirm" class="registrationFormInput">
+            <input type="submit" value="Create Account" class="registrationFormSubmit">
+        </form>
+    </div>
+    <div class="loginDiv">
+        <form action="/login" method="post" class="loginForm">
+            <h2 class="loginFormHeader">Login</h2>
+            <label for="email" class="loginFormLabel">Email:</label>
+            <input type="email" name="email" class="loginFormInput">
+            <label for="password" class="loginFormLabel">Password:</label>
+            <input type="password" name="password" class="loginFormInput">
+            <input type="submit" value="Login" class="loginFormSubmit">
+        </form>
+    </div>
+</div>
+{% endblock %}

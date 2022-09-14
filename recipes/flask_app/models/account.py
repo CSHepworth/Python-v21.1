@@ -2,7 +2,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 
 class Account:
 
-    db = "login_and_registration_schema"
+    db = "recipes_schema"
     def __init__(self, data):
         self.id = data['id']
         self.first_name = data['first_name']
@@ -21,8 +21,15 @@ class Account:
     def get_by_email(cls, data):
         query = "SELECT * FROM accounts WHERE email = %(email)s;"
         result = connectToMySQL(cls.db).query_db(query, data)
-        if len(result) < 1:
+        if not result:
             return False
+        else:
+            return cls(result[0])
+
+    @classmethod
+    def get_one(cls, data):
+        query = "SELECT * FROM accounts WHERE id = %(id)s;"
+        result = connectToMySQL(cls.db).query_db(query, data)
         return cls(result[0])
 
     @staticmethod

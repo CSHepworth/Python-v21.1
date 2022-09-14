@@ -27,7 +27,7 @@ def account(id):
     data = {
         "id": id
     }
-    return render_template('account.html', account = Account.get_by_email(data))
+    return render_template('account.html', account = Account.get_one(data))
 
 
 @app.route('/login', methods=["POST"])
@@ -40,4 +40,4 @@ def login():
         flash("Invalid Email/Password")
         return redirect('/')
     session['account_id'] = account_in_db.id
-    return redirect('/account')
+    return redirect(f'/account/{account_in_db.id}')
