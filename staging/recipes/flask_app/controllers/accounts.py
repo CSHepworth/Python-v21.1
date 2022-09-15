@@ -11,17 +11,19 @@ def index():
 
 @app.route('/create_account', methods=["POST"])
 def create_account():
-    pw_hash = bcrypt.generate_password_hash(request.form['password'])
-    print(pw_hash)
+    
     data = {
         "first_name": request.form['first_name'],
         "last_name": request.form['last_name'],
         "email": request.form['email'],
-        "password": pw_hash
+        "password": bcrypt.generate_password_hash(request.form['password'])
     }
-    account = Account.save(data)
-    session['account'] = account
-    return redirect('/')
+    user = Account.save(data)
+    if not user:
+        flash("Email already has account")
+        return redirect('/')
+    session['user'] = user.id
+    return redirect(f'/account/{user.id}')
 
 @app.route('/account/<int:id>')
 def account(id):
@@ -36,9 +38,9 @@ def login():
     data = {
         "email": request.form['email']
     }
-    account_in_db = Account.get_by_email(data)
+    user = Account.get_by_email(data)
     if not account:
         flash("Invalid Email/Password")
         return redirect('/')
-    session['account_id'] = account_in_db.id
-    return redirect(f'/account/{account_in_db.id}')
+    session['user'] = user.id
+    return redirect(f'/account/{user.id}')

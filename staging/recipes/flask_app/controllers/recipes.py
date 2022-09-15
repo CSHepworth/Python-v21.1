@@ -14,13 +14,14 @@ def new_recipe(id):
 
 @app.route('/create_recipe', methods=["POST"])
 def create_recipe():
+    print(request.form)
     data = {
         "name": request.form["name"],
         "description": request.form["description"],
         "instructions": request.form["instructions"],
-        "data_made": request.form["date_made"],
+        "date_made": request.form["date_made"],
         "under30": request.form["under30"],
-        "author_id": request.form["id"]
+        "author_id": session['user']
     }
     recipe = Recipe.save(data)
-    return redirect('/')
+    return redirect(f'/account/{session["user"]}')
